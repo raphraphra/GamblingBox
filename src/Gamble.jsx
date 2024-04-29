@@ -59,7 +59,7 @@ export default function Gamble(){
         let memo;
         let deg = 10;
         const interval = setInterval(() => {
-            const r = Math.floor(Math.random() * (val*gambleMultip*2) - val*gambleMultip*1/Math.log10(gamble)) 
+            const r = Math.floor(Math.random() * (val*gambleMultip*2) - val*gambleMultip*0.2) 
             setReward(r)
             token.current.style.transform = `rotate(${deg}deg)`;
             deg += 10;
