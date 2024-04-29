@@ -102,9 +102,9 @@ export default function Gamble(){
                 <img ref={token} className="generator" onClick={() => generate()} src="https://png.pngtree.com/png-vector/20220729/ourmid/pngtree-poker-chip-png-image_6091092.png"></img>
                 <button className="display-menu" onClick={() => displayUpgrades()}>Upgrades</button>
                 <div ref={gamblingMenu} style={{display:"flex",flexDirection:"column", alignItems:"center",gap:"2vh", width:"80%", opacity:"0", transition:"all 500ms"}}>
-                    <GambUpgrades title="BlackJack" baseprice={20} urate={2.3} rate={1.2}/>
-                    <GambUpgrades title="Russians" baseprice={250} urate={3.14} rate={1.66}/>
-                    <GambUpgrades title="Italian Mafia" baseprice={1000} urate={5.5} rate={3.5}/>
+                    <GambUpgrades title="BlackJack" baseprice={20} urate={1.5} rate={1.1}/>
+                    <GambUpgrades title="Russians" baseprice={1000} urate={1.9} rate={1.33}/>
+                    <GambUpgrades title="Italian Mafia" baseprice={15000} urate={2.5} rate={2}/>
                 </div>
             </div>
         </div>
