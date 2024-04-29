@@ -1,15 +1,11 @@
 import { useAtom } from "jotai";
-import { cookieCount, cookiePerClick, rangeMax, rangeMin, cookiePerSecond} from "./AtomVariable";
-import {useEffect, useMemo, useState } from "react";
+import { cookieCount, cookiePerClick, rangeMax, rangeMin} from "./AtomVariable";
+import {useMemo, useState } from "react";
 import { useRef} from 'react';
 
 export default function Clicker(){
 
     const [cookie, setCookie] = useAtom(cookieCount);
-
-    const [PerSecond, setCookiePerSecond] = useAtom(useMemo(() => {
-        return cookiePerSecond;
-    },[]));
 
     const [cMin, __] = useAtom(useMemo(() => {
         return rangeMin;
@@ -78,7 +74,7 @@ export default function Clicker(){
 
     return (
         <div className="cookie-box">
-            <img ref={cookieImage} onClick={() => Clicked()} src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/25d45014-8cc3-4c98-b02c-5a0cf3a55ddd/dcpne01-ba5bdb1d-568b-4101-8b1f-e54eaf2ad299.png/v1/fill/w_1024,h_831/roulette_for_casino_on_a_transparent_background__by_prussiaart_dcpne01-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI1ZDQ1MDE0LThjYzMtNGM5OC1iMDJjLTVhMGNmM2E1NWRkZFwvZGNwbmUwMS1iYTViZGIxZC01NjhiLTQxMDEtOGIxZi1lNTRlYWYyYWQyOTkucG5nIiwiaGVpZ2h0IjoiPD04MzEiLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiJcL3dtXC8yNWQ0NTAxNC04Y2MzLTRjOTgtYjAyYy01YTBjZjNhNTVkZGRcL3BydXNzaWFhcnQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.uioKuUmfsYZppDdSp9TK9pogstakLDWOxxGoUYAN2Ss" alt="No cookie" />
+            <img STYLE ref={cookieImage} onClick={() => Clicked()} src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/25d45014-8cc3-4c98-b02c-5a0cf3a55ddd/dcpne01-ba5bdb1d-568b-4101-8b1f-e54eaf2ad299.png/v1/fill/w_1024,h_831/roulette_for_casino_on_a_transparent_background__by_prussiaart_dcpne01-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI1ZDQ1MDE0LThjYzMtNGM5OC1iMDJjLTVhMGNmM2E1NWRkZFwvZGNwbmUwMS1iYTViZGIxZC01NjhiLTQxMDEtOGIxZi1lNTRlYWYyYWQyOTkucG5nIiwiaGVpZ2h0IjoiPD04MzEiLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiJcL3dtXC8yNWQ0NTAxNC04Y2MzLTRjOTgtYjAyYy01YTBjZjNhNTVkZGRcL3BydXNzaWFhcnQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.uioKuUmfsYZppDdSp9TK9pogstakLDWOxxGoUYAN2Ss" alt="No cookie" />
             <span className="pop-up" ref = {indicator} style={{display:"none",margin : "1vh", fontSize:"5rem", opacity:"0", position : "absolute"}}><b>{PerClick >= 0 ? "+" : "-"} {Math.abs(PerClick)} !</b></span>
             <p ><span ref={cookieCounter} style={{fontSize:"4rem",fontStyle:"italic"}}>{cookie}</span> <span style={{color:"crimson",fontSize:"3rem"}}>tokens</span></p>
             <p className="counter">{cMin} ~ {cMax} tokens per click ! </p>
