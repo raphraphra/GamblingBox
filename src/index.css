@@ -48,6 +48,11 @@ body, html{
   }
 }
 
+.pop-up{
+  pointer-events: none;
+  width: 30px;
+}
+
 .wrapper{
   display: flex;
   flex-direction: row;
