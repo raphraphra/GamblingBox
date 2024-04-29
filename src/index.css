@@ -14,10 +14,19 @@
 
 }
 
+*{
+  pointer-events: none;
+}
+
 body, html{
   margin: 0%;
   background: var(--bgcolor);
   color: var(--fontcolormain);
+}
+
+.pop-up{
+  width: fit-content;
+  pointer-events: none;
 }
 
 .header{
@@ -46,11 +55,6 @@ body, html{
   to {
     transform: translateX(-100%);
   }
-}
-
-.pop-up{
-  pointer-events: none;
-  width: fit-content;
 }
 
 .wrapper{
